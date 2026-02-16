@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@import "./assets/fonts/doran/doran.css";
+@import "./assets/fonts/doran_fanum/doran_fanum.css";
+@import "./assets/fonts/iransansx/iransansx.css";
+@import "./assets/fonts/iransansx_fanum/iransansx_fanum.css";
+@import "./assets/fonts/noora/noora.css";
+@import "./assets/fonts/noora_fanum/noora_fanum.css";
+@import "./assets/fonts/peyda/peyda.css";
+@import "./assets/fonts/peyda_fanum/peyda_fanum.css";
+@import "./assets/fonts/yekanbakh/yekanbakh.css";
+@import "./assets/fonts/yekanbakh_fanum/yekanbakh_fanum.css";
+@import "./icon.css";

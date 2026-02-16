@@ -1,0 +1,34 @@
+@import "tailwindcss";
+/* globals.css یا tailwind layer */
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+.animate-ping-slow { animation: ping-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.delay-1000 { animation-delay: 1s; }
+
+
+
+/* COLORS HERE */
+
+.text-myb{
+  color: #11207A;
+}
+.bg-myb{
+  background-color: #2B3992;
+}
+.bg-myb-dark{
+  background-color: #11207A;
+}
+
+.text-myg{
+  color: #BBD430;
+}
+.bg-myg{
+  background-color: #BBD430;
+}
+.bg-myg-200{
+  background-color: #D1DB9E;
+}
+
+/* END OF COLORS */ 

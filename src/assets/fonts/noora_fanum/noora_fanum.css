@@ -1,0 +1,49 @@
+﻿@font-face {
+	font-family: NooraFaNum;
+	font-style: normal;
+	font-weight:100 200;
+	src: url('woff/NooraFaNum-ExtraLight.woff') format('woff'),
+	url('woff2/NooraFaNum-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: NooraFaNum;
+	font-style: normal;
+	font-weight:300;
+	src: url('woff/NooraFaNum-Light.woff') format('woff'),
+	url('woff2/NooraFaNum-Light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: NooraFaNum;
+	font-style: normal;
+	font-weight: 400 600;
+	src: url('woff/NooraFaNum-Regular.woff') format('woff'),   
+	url('woff2/NooraFaNum-Regular.woff2') format('woff2');		 
+}
+
+
+@font-face {
+	font-family: NooraFaNum;
+	font-style: normal;
+	font-weight: bold;
+	src: url('woff/NooraFaNum-Bold.woff') format('woff'),
+	url('woff2/NooraFaNum-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: NooraFaNum;
+	font-style: normal;
+	font-weight: 800;
+	src: url('woff/NooraFaNum-ExtraBold.woff') format('woff'),
+	url('woff2/NooraFaNum-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: NooraFaNum;
+	font-style: normal;
+	font-weight: 900;
+	src: url('woff/NooraFaNum-Black.woff') format('woff'),
+	url('woff2/NooraFaNum-Black.woff2') format('woff2');
+}
+

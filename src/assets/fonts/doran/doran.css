@@ -1,0 +1,49 @@
+﻿@font-face {
+	font-family: Doran;
+	font-style: normal;
+	font-weight: 100;
+	src: url('woff/Doran-Thin.woff') format('woff'),   
+	url('woff2/Doran-Thin.woff2') format('woff2');		
+}
+
+@font-face {
+	font-family: Doran;
+	font-style: normal;
+	font-weight: 300;
+	src: url('woff/Doran-Light.woff') format('woff'),   
+	url('woff2/Doran-Light.woff2') format('woff2');	
+}
+
+@font-face {
+	font-family: Doran;
+	font-style: normal;
+	font-weight: normal;
+	src: url('woff/Doran-Regular.woff') format('woff'),   
+	url('woff2/Doran-Regular.woff2') format('woff2');		 
+}
+
+
+@font-face {
+	font-family: Doran;
+	font-style: normal;
+	font-weight: 500 600;
+	src: url('woff/Doran-Medium.woff') format('woff'),
+	url('woff2/Doran-Medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Doran;
+	font-style: normal;
+	font-weight: bold;
+	src: url('woff/Doran-Bold.woff') format('woff'),
+	url('woff2/Doran-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Doran;
+	font-style: normal;
+	font-weight: 800;
+	src: url('woff/Doran-ExtraBold.woff') format('woff'),
+	url('woff2/Doran-ExtraBold.woff2') format('woff2');
+}
+
