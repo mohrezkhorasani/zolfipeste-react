@@ -12,7 +12,7 @@ export default function SpecialOfferBoxMainCard({ title, description, img }) {
             <div className="w-40 h-40">
                 <img
                     src={img}
-                    alt="آجیل"
+                    alt=""
                     className="w-full h-full object-cover"
                 />
             </div>

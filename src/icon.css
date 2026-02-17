@@ -15,11 +15,11 @@
   font-family: iconly;
   font-style: normal;
   font-weight: 200;
-  src: url('../fonts/icons/Iconly-light.eot');
-  src: url('../fonts/icons/Iconly-lightd41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-  url('../fonts/icons/Iconly-light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url('../fonts/icons/Iconly-light.ttf') format('truetype'),
-  url('../fonts/icons/Iconly-light.svg#Iconly-light') format('svg');;
+  src: url('assets/fonts/icons/Iconly-light.eot');
+  src: url('assets/fonts/icons/Iconly-lightd41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+  url('assets/fonts/icons/Iconly-light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  url('assets/fonts/icons/Iconly-light.ttf') format('truetype'),
+  url('assets/fonts/icons/Iconly-light.svg#Iconly-light') format('svg');;
 }
 
 
@@ -27,33 +27,33 @@
   font-family: iconly;
   font-style: normal;
   font-weight: normal;
-  src: url('../fonts/icons/Iconly-Broken.eot');
-  src: url('../fonts/icons/Iconly-Brokend41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-  url('../fonts/icons/Iconly-Broken.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url('../fonts/icons/Iconly-Broken.ttf') format('truetype'),
-  url('../fonts/icons/Iconly-Broken.svg#Iconly-Broken') format('svg');;
+  src: url('assets/fonts/icons/Iconly-Broken.eot');
+  src: url('assets/fonts/icons/Iconly-Brokend41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+  url('assets/fonts/icons/Iconly-Broken.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  url('assets/fonts/icons/Iconly-Broken.ttf') format('truetype'),
+  url('assets/fonts/icons/Iconly-Broken.svg#Iconly-Broken') format('svg');;
 }
 
 @font-face {
   font-family: iconly;
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/icons/Iconly-Bold.eot');
-  src: url('../fonts/icons/Iconly-Boldd41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-  url('../fonts/icons/Iconly-Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url('../fonts/icons/Iconly-Bold.ttf') format('truetype'),
-  url('../fonts/icons/Iconly-Bold.svg#Iconly-Bold') format('svg');;
+  src: url('assets/fonts/icons/Iconly-Bold.eot');
+  src: url('assets/fonts/icons/Iconly-Boldd41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+  url('assets/fonts/icons/Iconly-Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  url('assets/fonts/icons/Iconly-Bold.ttf') format('truetype'),
+  url('assets/fonts/icons/Iconly-Bold.svg#Iconly-Bold') format('svg');;
 }
 
 @font-face {
   font-family: iconly;
   font-style: normal;
   font-weight: 900;
-  src: url('../fonts/icons/Iconly-bulk.eot');
-  src: url('../fonts/icons/Iconly-bulkd41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-  url('../fonts/icons/Iconly-bulk.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url('../fonts/icons/Iconly-bulk.ttf') format('truetype'),
-  url('../fonts/icons/Iconly-bulk.svg#Iconly-bulk') format('svg');;
+  src: url('assets/fonts/icons/Iconly-bulk.eot');
+  src: url('assets/fonts/icons/Iconly-bulkd41d.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+  url('assets/fonts/icons/Iconly-bulk.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  url('assets/fonts/icons/Iconly-bulk.ttf') format('truetype'),
+  url('assets/fonts/icons/Iconly-bulk.svg#Iconly-bulk') format('svg');;
 }
 
 @font-face {

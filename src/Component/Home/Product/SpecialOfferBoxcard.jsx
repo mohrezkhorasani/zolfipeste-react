@@ -3,7 +3,7 @@ import image from "@assets/ax/ups/2025/05/strong-roasted-saffron-ahmad-aghaei-pi
 import { Show } from 'react-iconly';
 
 
-export default function SpecialOfferBoxCard({ title = "پسته فلفلی", payPrice = 19000, offPrice=0, basketCount=2, img }) {
+export default function SpecialOfferBoxCard({ title = "پسته فلفلی", payPrice = 19000, offPrice = 0, basketCount = 2, img }) {
 
     return (
         <div
@@ -22,7 +22,7 @@ export default function SpecialOfferBoxCard({ title = "پسته فلفلی", pay
                 <span className="text-lg font-bold text-myb text-[0.825rem] text-right ">
                     {payPrice.toLocaleString()}
                 </span>
-                {offPrice!=0 && (
+                {offPrice != 0 && (
                     <span className="text-sm text-myg text-[0.625rem] flex items-center">
                         <span className="line-through">{offPrice.toLocaleString()}</span>
                         <span className="text-[0.825rem] text-black font-bold mx-2">تومان</span>
@@ -31,8 +31,9 @@ export default function SpecialOfferBoxCard({ title = "پسته فلفلی", pay
             </div>
 
             <div className="flex gap-2">
-                <button className="bg-blue-900 text-white px-3 py-1 rounded-lg text-[0.625rem]">
-                    🛒
+                <button className="bg-blue-900 text-white px-3 py-1 rounded-lg text-[0.825rem] hover:bg-gray-200
+                 cursor-pointer hover:text-blue-900 transition-all duration-300 ">
+                    <i class="iconly-Buy"></i>
                 </button>
                 <button className="bg-gray-200 px-5 py-2 
                                     rounded-lg text-gray-700 flex items-center font-semibold gap-1 text-[0.625rem]
@@ -40,7 +41,7 @@ export default function SpecialOfferBoxCard({ title = "پسته فلفلی", pay
                                     focus:ring-blue-500 focus:ring-offset-2  
                                     cursor-pointer
                                     ">
-                    <Show size="small" />
+                    <i class="iconly-Show"></i>
                     مشاهده سریع
 
                 </button>
