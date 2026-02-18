@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import imgCover from "@assets/ax/ups/2025/05/economic-roasted-saffron-ahmad-aghaei-pistachios-barjil-967-1-300x300.webp"
+import { useState } from 'react'
+//fav =0 loading -1=false 1=true
+export default function GridMainProductCard({ id = 1, title = "پسته اکبری خام اعلی ",
+    img = imgCover, payPrice = 51000, oldPrice = 110000, favorite = -1 }) {
+    const [fav, setFav] = useState(favorite);
 
-
-export default function GridMainProductCard({ title = "پسته اکبری خام اعلی ", img = imgCover, payPrice = 51000, oldPrice = 110000 }) {
+    useEffect(() => {
+        // request api to change fav in server!
+        if (fav == 0) {
+            setTimeout(() => {
+                setFav(1)
+            }, 5000); 
+        }
+    }, [fav])
     return (
         <div
             className="bg-white rounded-xl shadow-2xl px-4 pt-4 pb-2 
@@ -10,30 +21,54 @@ export default function GridMainProductCard({ title = "پسته اکبری خا�
             hover:border-blue-600 hover:border duration-500 relative group"
         >
             <div className="relative">
-                <img
-                    src={img}
-                    alt={title}
-                    className="w-full h-auto object-cover transition-all duration-300 group-hover:opacity-30"
-                />
-
+                <a href={`/product/${id}`}>
+                    <img
+                        src={img}
+                        alt={title}
+                        className="w-full h-auto object-cover transition-all duration-300 group-hover:opacity-30"
+                    />
+                </a>
                 <div className="absolute inset-0 flex items-center justify-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <button className="w-7 h-7 rounded-lg bg-white/85 backdrop-blur-sm flex
-                    cursor-pointer items-center justify-center text-[#11207A] hover:bg-[#11207A] hover:text-white
-                    transition-colors duration-200 shadow-md pointer-events-auto">
-                       <i class="iconly-Heart"></i>
+                    <button
+                        className={`w-7 h-7 rounded-lg bg-white/85 backdrop-blur-sm flex
+             cursor-pointer items-center justify-center ${fav==1?"text-[#DC3545]":"text-[#11207A]"}
+             hover:bg-[#11207A] hover:text-white transition-colors duration-200
+             shadow-md pointer-events-auto`}
+                        onClick={() => {
+                            if (fav === -1) setFav(0);
+                            if (fav === 0) setFav(1);
+                            if (fav === 1) setFav(-1);
+                        }}
+                        disabled={fav == 0}
+                    >
+                        {fav === 0 ? (
+                            // spinner / loader
+                            <div className="w-4 h-4 border-2 border-t-[#11207A]
+                             border-gray-300 rounded-full animate-spin"></div>
+                        ) : (
+                            <i
+                                className={`iconly-Heart ${fav === 1 ? "icbo text-danger" : ""
+                                    }`}
+                            ></i>
+                        )}
                     </button>
 
-                    <button className="w-7 h-7 rounded-lg bg-white/85 backdrop-blur-sm flex 
+
+                    <a href={`/product/${id}`}>
+                        <button className="w-7 h-7 rounded-lg bg-white/85 backdrop-blur-sm flex 
                     items-center justify-center text-[#11207A] hover:bg-[#11207A] hover:text-white 
                     transition-colors duration-200 shadow-md pointer-events-auto cursor-pointer">
-                        <i class="iconly-Buy"></i>
-                    </button>
+                            <i class="iconly-Buy"></i>
+                        </button>
+                    </a>
+                    <a href={`/product/${id}`}>
 
-                    <button className="w-7 h-7 rounded-lg bg-white/85 backdrop-blur-sm flex items-center 
+                        <button className="w-7 h-7 rounded-lg bg-white/85 backdrop-blur-sm flex items-center 
                     justify-center text-[#11207A] hover:bg-[#11207A] hover:text-white transition-colors 
                     duration-200 shadow-md pointer-events-auto cursor-pointer">
-                     <i class="iconly-Show"></i>
-                    </button>
+                            <i class="iconly-Show"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
 

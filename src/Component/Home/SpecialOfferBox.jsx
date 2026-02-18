@@ -70,10 +70,10 @@ const products = [
     },
 ];
 
-export default function SpecialOfferBox({ title, description, img }) {
+export default function SpecialOfferBox({ title, description, img ,ref}) {
 
     return (
-        <section id='special-offer' className="bg-myb py-5 h-[55%] mt-15">
+        <section ref={ref} id='special-offer' className="bg-myb py-5 h-[55%] mt-15">
             <div className="bg-transparent py-10 px-5 flex flex-col md:flex-row justify-center items-center gap-6 mx-60">
                 <SpecialOfferBoxMainCard
                     title={title}
@@ -87,6 +87,7 @@ export default function SpecialOfferBox({ title, description, img }) {
                         <SpecialOfferBoxCard
                             key={product.id}
                             title={product.name}
+                            id={product.id}
                             payPrice={product.price}
                             offPrice={product.oldPrice}
                             img={product.image}

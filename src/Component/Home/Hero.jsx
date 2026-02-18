@@ -1,28 +1,63 @@
 
 import { useEffect, useRef } from 'react';
 import PicHero from '@assets/ax/hero-home.png'
+import { useLazyInView } from '@/Tools/LazyLoading';
+import FloatingImage from '@/Tools/FloatingImage';
+export const fadeInClass = (visible) =>
+    `transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+    }`;
+
 
 export default function Hero() {
+    const [ref1, visible1] = useLazyInView();
+    const [ref2, visible2] = useLazyInView();
+    const [ref3, visible3] = useLazyInView();
+    const refFloatingImage = ref3;
+    const handleMouseMove = (e) => {
+        const { left, top, width, height } =
+            refFloatingImage.current.getBoundingClientRect();
 
+        const x = (e.clientX - (left + width / 2)) / 100;
+        const y = (e.clientY - (top + height / 2)) / 100;
+
+        refFloatingImage.current.style.transform = `translate(${x}px, ${y}px)`;
+    };
+    
+    const resetPosition = () => {
+        refFloatingImage.current.style.transform = "translate(0px, 0px)";
+    };
 
     return (
-        <section className='p-6 mx-60 max-h-md' dir='rtl'>
+        <section className='inline-block p-6 mx-60 max-h-md' dir='rtl'
+            onMouseMove={handleMouseMove}
+            onMouseLeave={resetPosition}
+        >
             <div className='flex flex-col sm:flex-row gap-5 w-full'>
-                <div className="flex-1 relative bg-transparent ">
+                <div className={`flex-1 relative bg-transparent`} >
                     <div className="absolute inset-40 rounded-full bg-white/15 blur-3xl scale-[1.15] opacity-60 z-1" />
                     <div className="absolute inset-8 rounded-full bg-white/25 blur-2xl opacity-50 z-1" />
                     <img
+                        ref={ref3}
                         src={PicHero}
                         alt="کاسه پسته با هاله سفید"
-                        className="relative z-10 w-full h-auto rounded-2xl object-cover scale-[0.8]"
+                        className={`
+                            transition-transform duration-500 ease-out will-change-transform 
+                            relative z-10 w-full h-auto rounded-2xl object-cover scale-[0.8] 
+                             ${fadeInClass(visible3)}`} 
                     />
+                    {/* <FloatingImage
+                    src={PicHero}
+                        className={`
+                            relative z-10 w-full h-auto rounded-2xl object-cover scale-[0.8] 
+                            `} */}
+                    {/* /> */}
                 </div>
                 <div className="text-white flex-1 bg-transparent p-5 rounded-4xl font-['YekanBakh'] mt-[6%]">
-                    <div className='flex flex-row text-7xl font-black'>
-                        <p className="text-[#BBD430] px-2">پسته </p> ذوالفقاری
+                    <div className={`flex flex-row text-7xl font-black ${fadeInClass(visible1)}`} ref={ref1}>
+                        <p className={`text-[#BBD430] px-2 `} ref={ref1}>پسته </p> ذوالفقاری
                     </div>
-                    <p className="text-white mt-10">
-                        <p className='font-semibold text-2xl mb-2'> ما باغداریم، نه فقط آجیل‌فروش!</p>
+                    <p className={`text-white mt-10 ${fadeInClass(visible2)}`} ref={ref2}>
+                        <p className={`font-semibold text-2xl mb-2 ${fadeInClass(visible2)}`} ref={ref2}> ما باغداریم، نه فقط آجیل‌فروش!</p>
                         از باغ‌های مرغوب خودمان تا بسته‌بندی نهایی در دامغان.
                     </p>
                     <div className="flex flex-row justify-start items-center gap-2 ml-auto"    >
