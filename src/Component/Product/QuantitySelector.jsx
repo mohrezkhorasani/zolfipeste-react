@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function QuantitySelector({quantity, setQuantity, disabled=false}) {
+export default function QuantitySelector({ quantity, setQuantity, disabled = false }) {
 
   const increment = () => setQuantity((prev) => prev + 1);
   const decrement = () => setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
@@ -16,7 +16,7 @@ export default function QuantitySelector({quantity, setQuantity, disabled=false}
         +
       </button>
 
-      {/* input */}
+      {/* نمایش تعداد */}
       <input
         type="text"
         readOnly
