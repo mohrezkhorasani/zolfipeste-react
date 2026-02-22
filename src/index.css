@@ -13,3 +13,89 @@
 @import "./icon.css";
 @import "./bulk-style.css";
 @import "./woocommerce.css";
+
+
+
+
+
+
+
+
+
+
+
+.profile-nav-items{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow-y: auto;
+}
+.profile-nav-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    text-align: center;
+    position: relative;
+    flex-shrink: 0;
+
+}
+.profile-nav-item .profile-nav-item-icon{
+    font-size: 30px;
+    margin-bottom: 4px;
+    color: var(--colorPrimary);
+    transition: 200ms;
+}
+.profile-nav-item .title{
+    font-weight: 600;
+    color: var(--colorText);
+    font-size: 14px;
+}
+.profile-nav-items .vertical-line{
+    background: #eee;
+    height: 90px;
+    opacity: 1;
+}
+.profile-nav-item:hover .profile-nav-item-icon{
+    color: var(--colorPrimary);
+}
+
+.profile-nav-item:before{
+    content: '';
+    width: 0;
+    height: 1px;
+    background: var(--colorPrimary);
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    bottom: -8px;
+    transition: 300ms;
+}
+.profile-nav-item:hover:before{
+    width: 40px;
+}
+.profile-nav-item.active .profile-nav-item-icon{
+    color: var(--colorPrimary);
+}
+.profile-nav-item.active .title{
+    color: var(--colorPrimary);
+}
+
+.profile-nav-item.logout {
+    margin-right: auto;
+}
+.profile-nav-item.logout .profile-nav-item-icon {
+    color: #ff8192;
+}
+.profile-nav-item.logout:hover .profile-nav-item-icon{
+    color: #d00d28;
+
+}
+.profile-nav-item.logout:before {
+    background: #d00d28;
+}
+.profile-nav-item.logout:hover .title {
+    color: #d00d28;
+}

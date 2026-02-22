@@ -16,7 +16,7 @@ export default function BreadCrumbParent({ breadCrumbs }) {
                 {crumb.label}
               </a>
             )}
-            {!isLast && <span className="mx-1 text-gray-400">/</span>}
+            {!isLast && <span className="mx-1 text-gray-400"> &gt; </span>}
           </span>
         );
       })}

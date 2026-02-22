@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import ProductFilter from "./ProductFilter";
 import QuantitySelector from "./QuantitySelector";
 import FilterDetailsSummery from "../Home/Product/FilterDetailsSummery";
+import ImageGalleryModal from "../../Modal/ImageGalleryModal";
 
 const filters = ["250 گرم", "500 گرم", "750 گرم"];
 
@@ -25,10 +26,10 @@ export default function ProductDetailBox({ product }) {
 
   return (
     <section
-      className="transition-all flex flex-col md:flex-row rounded-2xl mt-5 mx-4 md:mx-60 p-4 gap-4 shadow-[#F6F6F6] duration-300"
+      className="transition-all flex flex-col md:flex-row rounded-2xl mt-5 mx-[4%] md:mx-60 p-4 gap-4 shadow-[#F6F6F6] duration-300"
       onMouseEnter={(e) =>
-        (e.currentTarget.style.boxShadow =
-          "0 0 60px 25px rgba(187, 212, 48, 0.05)")
+      (e.currentTarget.style.boxShadow =
+        "0 0 60px 25px rgba(187, 212, 48, 0.05)")
       }
       onMouseLeave={(e) =>
         (e.currentTarget.style.boxShadow = "0 0 20px 0 rgba(0,0,0,0.1)")
@@ -37,7 +38,7 @@ export default function ProductDetailBox({ product }) {
       {/* تصویر محصول */}
       <div className="flex-1 relative overflow-hidden rounded-2xl w-full md:w-auto">
         <FaSearch
-          className="absolute z-50 w-8 h-8 top-2 left-2 text-white hover:bg-white hover:border hover:border-[#2B3992] transition-all duration-300 hover:text-[#2B3992] bg-[#2B3992] bg-opacity-50 p-2 rounded-full cursor-pointer"
+          className="absolute z-20 w-8 h-8 top-2 left-2 text-white hover:bg-white hover:border hover:border-[#2B3992] transition-all duration-300 hover:text-[#2B3992] bg-[#2B3992] bg-opacity-50 p-2 rounded-full cursor-pointer"
           onClick={() => setIsModalOpen(true)}
         />
 
@@ -55,11 +56,10 @@ export default function ProductDetailBox({ product }) {
             style={
               isZoom
                 ? {
-                    transform: `scale(${zoomScale}) translate(${
-                      -mousePos.x * 50
+                  transform: `scale(${zoomScale}) translate(${-mousePos.x * 50
                     }%, ${-mousePos.y * 50}%)`,
-                    transformOrigin: "top left",
-                  }
+                  transformOrigin: "top left",
+                }
                 : {}
             }
           />
@@ -72,15 +72,14 @@ export default function ProductDetailBox({ product }) {
         </div>
 
         {/* تصاویر کوچک */}
-        <div className="absolute bottom-2 left-1/2 justify-center transform -translate-x-1/2 flex gap-2 flex-wrap md:flex-nowrap">
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2 flex-wrap justify-center">
           {product.images.map((img, idx) => (
             <img
               key={idx}
               src={img}
               alt={`thumb-${idx}`}
-              className={`w-16 h-16 object-cover rounded-lg border ${
-                selectedImage === img ? "border-[#2B3992]" : "border-gray-200"
-              } cursor-pointer`}
+              className={`w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg border ${selectedImage === img ? "border-[#2B3992]" : "border-gray-200"
+                } cursor-pointer`}
               onClick={() => setSelectedImage(img)}
             />
           ))}
@@ -115,9 +114,8 @@ export default function ProductDetailBox({ product }) {
         </div>
 
         <button
-          className={`bg-[#F32323]/50 hover:bg-[#F32323]  ${
-            selectedFilter == null ? "opacity-0" : "opacity-100"
-          } transition-all duration-300 px-1 py-1 text-white rounded-md w-fit text-[0.65rem]`}
+          className={`bg-[#F32323]/50 hover:bg-[#F32323]  ${selectedFilter == null ? "opacity-0" : "opacity-100"
+            } transition-all duration-300 px-1 py-1 text-white rounded-md w-fit text-[0.65rem]`}
           onClick={() => {
             setSelectedFilter(null);
             setQuantity(0);
@@ -212,6 +210,11 @@ export default function ProductDetailBox({ product }) {
           </div>
         </div>
       </div>
+      <ImageGalleryModal
+        images={product.images}
+        isModalOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 }

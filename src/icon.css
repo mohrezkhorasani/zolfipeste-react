@@ -58,11 +58,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icons/icomoonfe70.eot?lji0pb');
-  src:  url('../fonts/icons/icomoonfe70.eot?lji0pb#iefix') format('embedded-opentype'),
-  url('../fonts/icons/icomoonfe70.ttf?lji0pb') format('truetype'),
-  url('../fonts/icons/icomoonfe70.woff?lji0pb') format('woff'),
-  url('../fonts/icons/icomoonfe70.svg?lji0pb#icomoon') format('svg');
+  src:  url('assets/fonts/icons/icomoonfe70.eot?lji0pb');
+  src:  url('assets/fonts/icons/icomoonfe70.eot?lji0pb#iefix') format('embedded-opentype'),
+  url('assets/fonts/icons/icomoonfe70.ttf?lji0pb') format('truetype'),
+  url('assets/fonts/icons/icomoonfe70.woff?lji0pb') format('woff'),
+  url('assets/fonts/icons/icomoonfe70.svg?lji0pb#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

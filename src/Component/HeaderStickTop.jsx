@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
+import Cookies from "js-cookie";
+import LoginModal from "../Modal/Auth/LoginModal";
 
 export default function HeaderStickTop() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
+
+
 
   const menuItems = [
     "خانه",
@@ -21,11 +26,13 @@ export default function HeaderStickTop() {
       >
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-4 md:gap-10">
-          {/* LOGO */}
-          <h1 className="text-xl font-bold whitespace-nowrap">
-            <span className="text-[#BBD430] font-bold">پسته</span>{" "}
-            <span className="text-white">ذوالفقاری</span>
-          </h1>
+          <a href="/">
+            {/* LOGO */}
+            <h1 className="text-xl font-bold whitespace-nowrap">
+              <span className="text-[#BBD430] font-bold">پسته</span>{" "}
+              <span className="text-white">ذوالفقاری</span>
+            </h1>
+          </a>
 
           {/* MENU */}
           <nav className="hidden md:flex gap-8">
@@ -53,7 +60,11 @@ export default function HeaderStickTop() {
           </button>
 
           {/* ACCOUNT BUTTON */}
-          <button className="relative flex items-center gap-2 px-4 py-2 rounded-xl bg-[#BBD430]/30 text-[#BBD430] transition-all duration-300 hover:bg-[#BBD430] cursor-pointer hover:text-[#11207A] hover:ring-1 hover:ring-[#BBD430] hover:ring-offset-1 hover:ring-offset-[#11207A]">
+          <button onClick={() => {
+            if (!Cookies.get("t1")) {
+              setLoginOpen(true);
+            }
+          }} className="relative flex items-center gap-2 px-4 py-2 rounded-xl bg-[#BBD430]/30 text-[#BBD430] transition-all duration-300 hover:bg-[#BBD430] cursor-pointer hover:text-[#11207A] hover:ring-1 hover:ring-[#BBD430] hover:ring-offset-1 hover:ring-offset-[#11207A]">
             <span>حساب کاربری</span>
             <FaUser />
           </button>
@@ -73,11 +84,10 @@ export default function HeaderStickTop() {
 
             {/* CART DROPDOWN */}
             <div
-              className={`absolute left-0 mt-3 w-72 bg-white rounded-xl shadow-xl p-4 transition-all duration-200 origin-top ${
-                cartOpen
-                  ? "opacity-100 visible translate-y-0"
-                  : "opacity-0 invisible translate-y-2"
-              }`}
+              className={`absolute left-0 mt-3 w-72 bg-white rounded-xl shadow-xl p-4 transition-all duration-200 origin-top ${cartOpen
+                ? "opacity-100 visible translate-y-0"
+                : "opacity-0 invisible translate-y-2"
+                }`}
             >
               <p className="text-sm text-gray-600 text-right">سبد خرید شما</p>
               <div className="mt-3 text-sm text-gray-500 text-right">
@@ -109,6 +119,9 @@ export default function HeaderStickTop() {
           </div>
         </div>
       )}
+      {loginOpen &&
+        <LoginModal />
+      }
     </>
   );
 }

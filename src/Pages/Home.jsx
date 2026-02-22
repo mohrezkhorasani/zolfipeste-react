@@ -33,7 +33,7 @@ function HomePage() {
   const [refnews, visiblenews] = useLazyInView();
 
   return (
-    <div dir="rtl" className="min-h-screen bg-white">
+    <>
       <section
         id="Hero"
         className={`bg-linear-to-b from-[#11207A] to-[#2F3D94] `}
@@ -562,11 +562,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-      {/* سکشن بالای فوتر */}
-      <FooterUpper />
-      {/* سکشن فوتر   */}
-      <Footer />
-    </div>
+    </>
   );
 }
 
