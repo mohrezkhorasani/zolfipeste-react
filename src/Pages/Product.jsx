@@ -6,6 +6,7 @@ import { AlertTop } from "@/Component/AlertTop";
 import BreadCrumbParent from "@/Component/BreadCrumbParent";
 import { FaSearch } from "react-icons/fa";
 import ProductDetailBox from "@/Component/Product/ProductDetailBox";
+import Tabs from "../Component/tabs";
 
 export default function Product() {
   const { id } = useParams();
@@ -30,6 +31,29 @@ export default function Product() {
     ],
   };
 
+  const tabs = [
+    {
+      id: "profile",
+      title: "توضیحات",
+      iconClass: "icon-info me-1",
+      content: <p>توضیحات</p>,
+    },
+    {
+      id: "settings",
+      title: "توضیحات تکمیلی",
+      iconClass: "icon-menu me-1",
+      content: <div className="flex flex-col gap-1">
+        <hr className="w-full border-t border-gray-300 my-4" />
+        
+      </div>
+    },
+    {
+      id: "reports",
+      title: " نظرات (0) ",
+      iconClass: "icon-message-square me-1",
+      content: <p>لیست گزارش‌ها</p>,
+    },
+  ];
   return (
     <div dir="rtl" className="min-h-screen bg-white">
       <HeaderStickTop className="z-50" />
@@ -50,6 +74,10 @@ export default function Product() {
         <BreadCrumbParent breadCrumbs={breadCrumbs} />
       </section>
       <ProductDetailBox product={product} />
+
+      <div className="px-4 sm:px-10 md:px-20 lg:px-60 flex flex-col gap-2 bg-white shadow-lg mt-[3%] rounded-md">
+        <Tabs tabs={tabs} defaultTabId="profile" />
+      </div>
     </div>
   );
 }
