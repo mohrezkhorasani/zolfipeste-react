@@ -5,6 +5,7 @@ import HomePage from './Pages/Home';
 import Product from './Pages/Product';
 import DashboardPage from './Pages/Dashboard';
 import BaseLayout from "./Layout/BaseLayout"
+import AccountLayout from './Layout/AccountLayout';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,15 +15,20 @@ function App() {
       <Routes>
         {/* کل این گروه از Layout استفاده می‌کنند */}
         <Route element={<BaseLayout />}>
-          <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<Product />} />
-          <Route path="/my-account" element={<DashboardPage />} />
+          <Route path="/" element={<HomePage />} />
         </Route>
 
-        {/* اگر صفحه‌ای دارید که هدر/فوتر نمی‌خواهد (مثل صفحه لاگین) بیرون از تگ بالا بگذارید */}
-        {/* <Route path="/login" element={<LoginPage />} /> */}
-      </Routes>
-    </Router>
+        <Route element={<AccountLayout />}>
+          <Route path="/my-account" element={<DashboardPage />} />
+          
+        </Route>
+    
+    
+      {/* اگر صفحه‌ای دارید که هدر/فوتر نمی‌خواهد (مثل صفحه لاگین) بیرون از تگ بالا بگذارید */}
+      {/* <Route path="/login" element={<LoginPage />} /> */}
+    </Routes>
+    </Router >
   )
 }
 

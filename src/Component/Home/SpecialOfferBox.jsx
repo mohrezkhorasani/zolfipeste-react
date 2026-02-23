@@ -72,9 +72,9 @@ export default function SpecialOfferBox({ title, description, img, ref }) {
           <SpecialOfferBoxMainCard title={title} description={description} img={img} />
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-start md:gap-7 lg:gap-10">
+        <div className="flex flex-col md:flex-row md:items-start md:gap-7 lg:gap-10" dir='rtl'>
           {/* Main card فقط در دسکتاپ */}
-          <div className="hidden md:flex md:flex-col md:items-center md:w-72 lg:w-80 flex-shrink-0">
+          <div className="hidden md:flex md:flex-col md:items-center md:w-72 lg:w-80 shrink-0">
             <SpecialOfferBoxMainCard title={title} description={description} img={img} />
           </div>
 

@@ -22,7 +22,30 @@ export default function Product() {
     { label: "محصولات", href: "/products" },
     { label: "پسته احمدآقایی", href: "/products/ahmadaghayi" },
   ];
-  const comments = []
+  const comments = [
+    {
+      name: "محمدرضا",
+      date:"26 آبان 1398",
+      rating:4,
+      comment:"عالی بود مشتری ثابت شدم",
+      avatar: null
+    } ,
+    {
+      name: "محمدرضا",
+      date:"26 آبان 1398",
+      rating:4,
+      comment:"عالی بود مشتری ثابت شدم",
+      avatar: null
+    } ,
+    {
+      name: "محمدرضا",
+      date:"26 آبان 1398",
+      rating:4,
+      comment:"عالی بود مشتری ثابت شدم",
+      avatar: null
+    } ,
+    
+  ]
   const product = {
     name: "پسته احمدآقایی برشته دو آتشه زعفرانی",
     description: `

@@ -5,9 +5,12 @@ import FooterUpper from "../Component/FooterUpper";
 
 const BaseLayout = () => {
   return (
-    <div dir="rtl" className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white"
+      dir="rtl"
+
+    >
       <HeaderStickTop />
-      
+
       {/* محتوای هر صفحه اینجا رندر می‌شود */}
       <main className="min-h-screen">
         <Outlet />

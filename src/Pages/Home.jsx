@@ -21,6 +21,7 @@ import Footer from "@/Component/Footer";
 import { useLazyInView } from "@/Tools/LazyLoading";
 import { FadeIn } from "@/Tools/FadeIn";
 import FooterUpper from "@/Component/FooterUpper";
+import HeaderStickTop from "../Component/HeaderStickTop";
 
 function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,13 +34,11 @@ function HomePage() {
   const [refnews, visiblenews] = useLazyInView();
 
   return (
-    <>
+    <div dir="rtl">
       <section
         id="Hero"
         className={`bg-linear-to-b from-[#11207A] to-[#2F3D94] `}
       >
-        <Header className="z-50" />
-        <hr className="mb-6 border-gray-300 dark:border-gray-700 mx-60" />
         <Hero />
       </section>
       {/* Section کارت about us */}
@@ -58,7 +57,7 @@ function HomePage() {
       ${visibleAboutUs ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
     `}
         >
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16  items-start">
             {/* توضیحات درباره ما */}
             <div className="flex-1 font-['YekanBakh'] order-2 lg:order-1">
               <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#202020]">
@@ -69,7 +68,7 @@ function HomePage() {
               </h1>
 
               <p className="text-justify mt-5 sm:mt-6 md:mt-8 text-[#606060] text-base sm:text-lg leading-relaxed">
-                پسته و آجیل برای ما یادگار درختانی است که خودمان کاشتیم و با جان
+                پسته و آجییل برای ما یادگار درختانی است که خودمان کاشتیم و با جان
                 و دل بزرگ کردیم. راه طولانی‌ای رفتیم تا امروز یکی از
                 باکیفیت‌ترین‌ها باشیم؛ چون از باغ تا بسته‌بندی، همه کار دست
                 خودمان است و این یعنی طعم فرق می‌کند.
@@ -562,7 +561,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

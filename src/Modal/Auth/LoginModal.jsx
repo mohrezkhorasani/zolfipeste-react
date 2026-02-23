@@ -22,7 +22,7 @@ export default function LoginModal() {
 
   const handleSuccess = () => {
     setShowCode(false);
-  };
+  }; 
 
   return (
     <>
