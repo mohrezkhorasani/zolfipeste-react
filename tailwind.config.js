@@ -1,5 +1,6 @@
 theme: {
   extend: {
+    
     colors: {
       mainblue:'#11207A';
       mainGreen:'#BBD430';

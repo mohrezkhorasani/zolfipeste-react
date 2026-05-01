@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000", // Use the URL where your Vite development server is running
+            "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
+            "port": 3000, // Set this to match your Vite development server port
+            "skipFiles": [
+                "<node_internals>/**/*"
+            ]
+        }
+    ]
+}

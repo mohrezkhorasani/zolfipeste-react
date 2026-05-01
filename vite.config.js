@@ -2,8 +2,14 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'   // ← این خط مهمه
+
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    host: true, // This will listen on all addresses
+    port: 3000, // You can specify the port here too
+    historyApiFallback: true,
+  },
   plugins: [
     react(),
     tailwindcss(),

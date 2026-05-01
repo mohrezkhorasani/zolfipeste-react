@@ -5,41 +5,99 @@
 
 /* globals.css یا tailwind layer */
 @keyframes ping-slow {
-  0% { transform: scale(1); opacity: 0.6; }
-  100% { transform: scale(2.5); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
-.animate-ping-slow { animation: ping-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-.delay-1000 { animation-delay: 1s; }
+/* غیرفعال کردن سلکت متن در کل صفحه */
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* اجازه سلکت فقط برای input ها و textarea ها */
+input, 
+textarea,
+[contenteditable="true"] {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* جلوگیری از درگ کردن تصاویر و المان‌ها */
+img,
+svg,
+button,
+[ draggable="true"] {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* حذف هایلایت آبی رنگ در موبایل هنگام کلیک */
+button,
+a,
+div[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* جلوگیری از زوم خودکار روی input در موبایل (اختیاری) */
+input {
+  font-size: 16px;
+}
+.animate-ping-slow {
+  animation: ping-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
 
 
-button{
+button {
   cursor: pointer;
 }
+
 /* COLORS HERE */
 
-.text-myb{
-  color: #11207A;
-}
-.bg-myb{
-  background-color: #2B3992;
-}
-.bg-myb-dark{
-  background-color: #11207A;
+.text-myb {
+  color: #0b3f32;
 }
 
-.text-myg{
+.bg-myb {
+  background-color: #0b3f32;
+}
+
+.bg-myb-dark {
+  background-color: #093127;
+}
+
+.text-myg {
   color: #BBD430;
 }
-.bg-myg{
-  background-color: #BBD430;
+
+.bg-myg {
+  background-color: #30d4cc;
 }
-.bg-myg-200{
-  background-color: #D1DB9E;
+
+.bg-myg-200 {
+  background-color: #a5f8f4;
 }
-.border-myb{
-  background-color: #2B3992;
+
+.border-myb {
+  background-color: #0b3f32;
 }
-/* END OF COLORS */ 
+
+/* END OF COLORS */
 
 
 
@@ -47,47 +105,112 @@ button{
 
 .circle-loader,
 .circle-loader:after {
-    border-radius: 50%;
-    width: 5px;
-    height: 5px;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
 }
 
 .circle-loader {
-    overflow: hidden;
-    margin: 20px auto;
-    font-size: 10px;
-    position: relative;
-    text-indent: -9999em;
-    border-top: 5px solid rgba(var(--colorPrimaryRGB), 0.2);
-    border-right: 5px solid rgba(var(--colorPrimaryRGB), 0.2);
-    border-bottom: 5px solid rgba(var(--colorPrimaryRGB), 0.2);
-    border-left: 5px solid var(--colorPrimary);
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-animation: load8 1.1s infinite linear;
-    animation: load8 1.1s infinite linear;
+  overflow: hidden;
+  margin: 20px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 5px solid rgba(var(--colorPrimaryRGB), 0.2);
+  border-right: 5px solid rgba(var(--colorPrimaryRGB), 0.2);
+  border-bottom: 5px solid rgba(var(--colorPrimaryRGB), 0.2);
+  border-left: 5px solid var(--colorPrimary);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
 }
 
 
 @-webkit-keyframes load8 {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes load8 {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-color: #ffae00;
+    /* قرمز */
+    /* opacity: 1; */
+    animation-duration: 1000ms;
+  }
+
+  50% {
+    border-color: #ffd000C2;
+    /* شفاف */
+    /* opacity: 0; */
+    animation-duration: 2000ms;
+  }
+
+  70% {
+    border-color: #ffd000;
+    /* قرمز */
+    /* opacity: 1; */
+    animation-duration: 3000ms;
+  }
+
+  100% {
+    border-color: #ffae00;
+    /* قرمز */
+    /* opacity: 1; */
+    animation-duration: 4000ms;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+
+/* Custom breakpoints if needed */
+@media (max-width: 480px) {
+  .xs\:inline {
+    display: inline;
+  }
+  .xs\:hidden {
+    display: none;
+  }
+}
+
+/* Smooth animations for mobile menu */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add this to your mobile menu nav for smooth animation */
+/* You can add this inline style or in CSS */
+.mobile-menu-enter {
+  animation: slideDown 0.2s ease-out;
 }
